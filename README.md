@@ -57,6 +57,16 @@ python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt.txt
 python real_time_object_detection.py --help
 ```
 
+### Run it on a video file (no webcam needed)
+
+`detect_video.py` runs the same model over a video file and saves the annotated result:
+
+```
+python detect_video.py --prototxt MobileNetSSD_deploy.prototxt.txt --model MobileNetSSD_deploy.caffemodel --input input.mp4 --output output.mp4
+```
+
+It needs OpenCV 3.3 to 4.x (`pip install "opencv-python-headless<5"`); OpenCV 5 removed the Caffe model loader. A sample result is in [demo/object_detection_demo.mp4](demo/object_detection_demo.mp4).
+
 ### References and Useful Links
 
 * https://github.com/chuanqi305/MobileNet-SSD
